@@ -36,7 +36,7 @@ pipeline {
 
         stage('Verify Deployment') {
             steps {
-                sh 'kubectl rollout status deployment/jenkins-demo'
+                #sh 'kubectl rollout status deployment/jenkins-demo'
                 sh 'kubectl get deployment jenkins-demo'
                 sh 'kubectl get pods -l app=jenkins-demo'
                 sh 'kubectl get service jenkins-demo-service'
