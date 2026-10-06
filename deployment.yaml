@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: jenkins-demo
-          image: jenkins-demo:latest
+          image: jenkins-demo:v1
           imagePullPolicy: Never
           #new commit#
           ports:
