@@ -14,14 +14,14 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t jenkins-demo:latest .'
+                sh 'docker build -t jenkins-demo:v1 .'
             }
         }
 
         stage('Load Image into Minikube') {
             steps {
                 sh '''
-                    docker save jenkins-demo:latest | \
+                    docker save jenkins-demo:v1 | \
                     docker exec -i minikube ctr -n k8s.io images import -
                 '''
             }
